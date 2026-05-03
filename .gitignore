@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets — never commit these
+functions/.env
+functions/service_account.json
+*.json.bak
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Node (if added later)
+node_modules/
