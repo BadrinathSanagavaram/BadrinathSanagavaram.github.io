@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Badrinath Sanagavaram — Senior Data Engineer</title>
+  <meta name="description" content="Senior Data Engineer & Analytics Specialist. Data architecture, ETL pipelines, cloud migration, and analytics consulting." />
+  <style>
+    /* ── CSS Variables ──────────────────────────────────────────────────── */
+    :root {
+      --bg-dark:       #0a0a0a;
+      --bg-card:       #151515;
+      --bg-hover:      #1f1f1f;
+      --text-primary:  #ffffff;
+      --text-secondary:#a0a0a0;
+      --accent:        #00d4ff;
+      --accent-purple: #9d4edd;
+      --border-color:  #2a2a2a;
+    }
+
+    /* ── Reset ─────────────────────────────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Layout wrapper ────────────────────────────────────────────────── */
+    .content-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    /* ── Section Dividers ──────────────────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border-color);
+      margin: 100px 0;
+    }
+
+    /* ── Section Headings ──────────────────────────────────────────────── */
+    .section-heading { font-size: 32px; font-weight: 700; color: #fff; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .section-bar { width: 60px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 40px; }
+
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* HERO SECTION                                                         */
+    /* ═══════════════════════════════════════════════════════════════════ */
+    #hero {
+      position: relative;
+      min-height: 800px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Slideshow images */
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(100%) contrast(1.1);
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      z-index: 1;
+    }
+    .slide-bg.active { opacity: 0.45; }
+
+    /* Dark overlay */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(90deg,
+        rgba(10,10,10,0.75) 0%,
+        rgba(10,10,10,0.40) 50%,
+        rgba(10,10,10,0.70) 100%);
+    }
+
+    /* Photo upload btn */
+    .photo-upload-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      background: rgba(0,212,255,0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .photo-upload-btn:hover { background: rgba(0,212,255,0.30); }
+    #fileInput { display: none; }
+
+    /* Hero content grid */
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    /* Left column */
+    .hero-name h1 {
+      font-size: 110px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      color: #fff;
+      text-shadow: 0 10px 40px rgba(0,212,255,0.15);
+    }
+    .hero-name h1 span { display: block; }
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      letter-spacing: 0.5px;
+      margin-top: 16px;
+      margin-bottom: 10px;
+    }
+
+    /* Education cards */
+    .edu-cards { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+    .edu-card {
+      display: flex;
+      align-items: stretch;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .edu-card:hover {
+      border-color: rgba(0,212,255,0.30);
+      background: rgba(0,212,255,0.05);
+    }
+    .edu-accent {
+      width: 4px;
+      flex-shrink: 0;
+    }
+    .edu-accent.master  { background: linear-gradient(180deg, #00d4ff, #9d4edd); }
+    .edu-accent.bachelor{ background: linear-gradient(180deg, #9d4edd, #00d4ff); }
+    .edu-content {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .edu-content .degree-type  { font-size: 13px; font-weight: 600; color: #fff; }
+    .edu-content .field        { font-size: 13px; font-weight: 600; color: var(--accent); }
+    .edu-content .university   { font-size: 13px; font-weight: 600; color: #fff; }
+
+    /* Contact links */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+    .contact-links a {
+      color: #fff;
+      transition: color 0.2s ease;
+    }
+    .contact-links a:hover { color: var(--accent); text-decoration: underline; }
+
+    /* Right column — KPI cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .kpi-card {
+      position: relative;
+      background: rgba(21,21,21,0.55);
+      border: 1px solid #2a2a2a;
+      padding: 40px 36px 40px 32px;
+      border-radius: 16px;
+      backdrop-filter: blur(14px);
+      text-align: left;
+      transition: all 0.35s ease;
+      overflow: hidden;
+      cursor: default;
+    }
+    .kpi-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.18), rgba(157,78,221,0.1));
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+    .kpi-card:hover {
+      border-color: rgba(0,212,255,0.40);
+      background: rgba(21,21,21,0.75);
+      transform: translateY(-4px);
+    }
+    .kpi-card:hover::after { opacity: 1; }
+    .kpi-number {
+      font-size: 52px;
+      font-weight: 200;
+      color: var(--accent);
+      letter-spacing: -1px;
+      white-space: nowrap;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .kpi-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      line-height: 1.8;
+    }
+
+    /* Slide indicator dots */
+    .slide-dots {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.30);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .dot.active {
+      background: var(--accent);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* EXPERIENCE CARDS                                                     */
+    /* ═══════════════════════════════════════════════════════════════════ */
+    .card-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .exp-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 32px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .exp-card:hover {
+      border-color: var(--accent);
+      background: var(--bg-hover);
+      transform: translateY(-8px);
+    }
+    .exp-card:hover::before { transform: scaleX(1); }
+
+    .card-company { font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+    .card-role    { font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+    .card-date    { font-size: 11px; color: var(--text-secondary); margin-bottom: 16px; }
+    .card-desc    { font-size: 13px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 16px; }
+    .card-badge   {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(0,212,255,0.15);
+      border-radius: 4px;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    /* Project card title variant */
+    .card-title    { font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+    .card-subtitle { font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* SKILLS                                                               */
+    /* ═══════════════════════════════════════════════════════════════════ */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      border-radius: 8px;
+    }
+    .skill-category {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .badge-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-badge {
+      position: relative;
+      display: inline-block;
+      background: rgba(0,212,255,0.10);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: default;
+      transition: background 0.2s ease;
+    }
+    .skill-badge:hover { background: rgba(0,212,255,0.20); }
+
+    /* Tooltip */
+    .skill-badge .tooltip {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      max-width: 150px;
+      white-space: normal;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 100;
+      line-height: 1.4;
+    }
+    .skill-badge .tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: rgba(255,255,255,0.15);
+    }
+    .skill-badge:hover .tooltip { opacity: 1; }
+
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* FOOTER / CONTACT                                                     */
+    /* ═══════════════════════════════════════════════════════════════════ */
+    #contact {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      margin-top: 100px;
+      padding: 80px 60px;
+    }
+    .contact-heading {
+      font-size: 36px;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .contact-subtitle {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 50px;
+    }
+
+    /* Form */
+    .form-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+    .form-full  { margin-bottom: 24px; }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      outline: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: rgba(0,212,255,0.05);
+    }
+    .form-group select option { background: #1a1a1a; color: #fff; }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    ::placeholder { color: rgba(255,255,255,0.25); }
+
+    .submit-btn {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 14px 48px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    .submit-btn:hover { background: #fff; color: var(--bg-dark); }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* Form feedback */
+    .form-feedback {
+      margin-top: 16px;
+      font-size: 13px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      display: none;
+    }
+    .form-feedback.success {
+      background: rgba(0,212,255,0.10);
+      border: 1px solid rgba(0,212,255,0.30);
+      color: var(--accent);
+      display: block;
+    }
+    .form-feedback.error {
+      background: rgba(255,80,80,0.10);
+      border: 1px solid rgba(255,80,80,0.30);
+      color: #ff6b6b;
+      display: block;
+    }
+
+    /* Footer info row */
+    .footer-info {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-color);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px;
+    }
+    .footer-info-item .fi-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .footer-info-item .fi-value { font-size: 15px; color: #fff; }
+
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* RESPONSIVE                                                           */
+    /* ═══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 1400px) {
+      .hero-content { grid-template-columns: 1fr; gap: 60px; }
+      .hero-name h1 { font-size: 90px; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); max-width: 600px; }
+      .card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 1024px) {
+      .card-grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      #hero { min-height: 600px; }
+      .hero-content { padding: 40px 30px; }
+      .hero-name h1 { font-size: 70px; }
+      .content-wrap { padding: 0 30px; }
+      #contact { padding: 50px 30px; }
+      .form-row-3 { grid-template-columns: 1fr; }
+      .card-grid-2 { grid-template-columns: 1fr; }
+      .card-grid-3 { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .footer-info { grid-template-columns: 1fr; gap: 30px; }
+      .contact-links { gap: 16px; font-size: 14px; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name h1 { font-size: 52px; }
+      .kpi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1 · HERO                                                    -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section id="hero">
+
+  <!-- Slideshow backgrounds -->
+  <img class="slide-bg active" id="slide-0"
+    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80"
+    alt="" aria-hidden="true" />
+  <img class="slide-bg" id="slide-1"
+    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80"
+    alt="" aria-hidden="true" />
+  <img class="slide-bg" id="slide-2"
+    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&q=80"
+    alt="" aria-hidden="true" />
+  <img class="slide-bg" id="slide-3"
+    src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80"
+    alt="" aria-hidden="true" />
+  <img class="slide-bg" id="slide-4"
+    src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1600&q=80"
+    alt="" aria-hidden="true" />
+
+  <div class="hero-overlay"></div>
+
+  <!-- Photo upload -->
+  <button class="photo-upload-btn" id="uploadBtn" onclick="document.getElementById('fileInput').click()">
+    📷 Load My Photo
+  </button>
+  <input type="file" id="fileInput" accept="image/*" />
+
+  <!-- Hero content -->
+  <div class="hero-content">
+
+    <!-- Left column -->
+    <div class="hero-left">
+      <div class="hero-name">
+        <h1>
+          <span>BADRINATH</span>
+          <span>SANAGAVARAM</span>
+        </h1>
+      </div>
+      <p class="hero-subtitle">Senior Data Engineer &amp; Analytics Specialist</p>
+
+      <div class="edu-cards">
+        <div class="edu-card">
+          <div class="edu-accent master"></div>
+          <div class="edu-content">
+            <span class="degree-type">Master's Degree</span>
+            <span class="field">Data Analytics Engineering</span>
+            <span class="university">George Mason University</span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-accent bachelor"></div>
+          <div class="edu-content">
+            <span class="degree-type">Bachelor's Degree</span>
+            <span class="field">Computer Science &amp; Engineering</span>
+            <span class="university">Jawaharlal Nehru Technological University Hyderabad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-links">
+        <a href="tel:+16823710567">+1 682-371-0567</a>
+        <a href="mailto:bsanagav@gmail.com">bsanagav@gmail.com</a>
+        <a href="https://linkedin.com/in/badrinath-sanagavaram" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Right column — KPI cards -->
+    <div class="hero-right">
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-number">15M+</div>
+          <div class="kpi-label">Healthcare Records Managed</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-number">40+</div>
+          <div class="kpi-label">ETL Pipelines Built</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-number">$200K+</div>
+          <div class="kpi-label">Cost Saved &amp; Revenue Protected</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-number">4</div>
+          <div class="kpi-label">Enterprise Roles</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /hero-content -->
+
+  <!-- Slide indicator dots (built by JS) -->
+  <div class="slide-dots" id="slideDots"></div>
+
+</section><!-- /hero -->
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2 · PROFESSIONAL EXPERIENCE                                 -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="divider"></div>
+<section id="experience">
+  <div class="content-wrap">
+    <h2 class="section-heading">Professional Experience</h2>
+    <div class="section-bar"></div>
+
+    <div class="card-grid-2">
+
+      <div class="exp-card">
+        <div class="card-company">Ground Game Health</div>
+        <div class="card-role">Associate Data Engineer</div>
+        <div class="card-date">Aug 2025 – Mar 2026</div>
+        <div class="card-desc">
+          Engineered scalable healthcare data pipelines processing 15M+ patient records
+          using Azure Data Factory and PySpark. Built HIPAA-compliant transformation layers
+          and contributed to real-time clinical analytics dashboards, enabling proactive
+          patient-outcome monitoring across distributed care networks.
+        </div>
+        <span class="card-badge">Azure · PySpark · Healthcare</span>
+      </div>
+
+      <div class="exp-card">
+        <div class="card-company">Grassroots Analytics</div>
+        <div class="card-role">Data Engineer</div>
+        <div class="card-date">Sep 2024 – Dec 2024</div>
+        <div class="card-desc">
+          Designed and deployed GCP-based ETL pipelines for political campaign analytics
+          using BigQuery and Apache Airflow. Reduced data processing latency by 40% through
+          pipeline optimization and parallel DAG execution, powering real-time voter
+          segmentation and field-operations reporting.
+        </div>
+        <span class="card-badge">GCP · BigQuery · Airflow</span>
+      </div>
+
+      <div class="exp-card">
+        <div class="card-company">Copart</div>
+        <div class="card-role">Data Engineer</div>
+        <div class="card-date">May 2024 – Aug 2024</div>
+        <div class="card-desc">
+          Migrated legacy on-premise data pipelines to cloud-native AWS architecture.
+          Optimized Pentaho ETL workflows and implemented automated data quality validation
+          frameworks protecting $200K+ in auction revenue and reducing data discrepancies
+          across multi-region vehicle inventory systems.
+        </div>
+        <span class="card-badge">AWS · Pentaho · BigQuery</span>
+      </div>
+
+      <div class="exp-card">
+        <div class="card-company">Sreevamsa Sales Pvt Ltd</div>
+        <div class="card-role">Data Engineer</div>
+        <div class="card-date">Jan 2023 – Aug 2023</div>
+        <div class="card-desc">
+          Architected the company's first cloud data infrastructure on GCP from scratch.
+          Created Python-based ETL pipelines feeding executive Power BI dashboards,
+          driving data-informed sales strategy decisions and establishing repeatable
+          data engineering standards for future growth.
+        </div>
+        <span class="card-badge">GCP · Python · Power BI</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3 · TECHNICAL PROJECTS & CASE STUDIES                      -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="divider"></div>
+<section id="projects">
+  <div class="content-wrap">
+    <h2 class="section-heading">Technical Projects &amp; Case Studies</h2>
+    <div class="section-bar"></div>
+
+    <div class="card-grid-3">
+
+      <div class="exp-card">
+        <div class="card-title">Multi-Cloud Data Migration</div>
+        <div class="card-subtitle">Enterprise Architecture</div>
+        <div class="card-date">Case Study</div>
+        <div class="card-desc">
+          Architected zero-downtime data migration across AWS, Azure, and GCP for an
+          enterprise client using Terraform IaC. Designed cross-cloud replication
+          with 99.9% data integrity, full audit trail, and automated rollback
+          capabilities.
+        </div>
+        <span class="card-badge">AWS · Azure · GCP · Terraform</span>
+      </div>
+
+      <div class="exp-card">
+        <div class="card-title">Real-Time Healthcare Analytics Platform</div>
+        <div class="card-subtitle">Full-Stack Implementation</div>
+        <div class="card-date">Case Study</div>
+        <div class="card-desc">
+          Built a HIPAA-compliant streaming analytics platform processing 50K+ events
+          per second using Kafka and Spark. Live Power BI dashboards enabled real-time
+          clinical decision support and regulatory reporting for hospital networks.
+        </div>
+        <span class="card-badge">Kafka · Spark · Azure · Power BI</span>
+      </div>
+
+      <div class="exp-card">
+        <div class="card-title">Campaign Propensity Model</div>
+        <div class="card-subtitle">Data Science &amp; ML Pipeline</div>
+        <div class="card-date">Case Study</div>
+        <div class="card-desc">
+          Developed voter propensity scoring models using BigQuery ML achieving 78%
+          prediction accuracy. Automated the full ML lifecycle from feature engineering
+          to production deployment, enabling targeted canvassing with measurable
+          conversion lift.
+        </div>
+        <span class="card-badge">Python · BigQuery · ML · Statistics</span>
+      </div>
+
+      <div class="exp-card">
+        <div class="card-title">Data Warehouse Optimization</div>
+        <div class="card-subtitle">Performance Engineering</div>
+        <div class="card-date">Case Study</div>
+        <div class="card-desc">
+          Redesigned a Snowflake data warehouse reducing average query execution time
+          by 65% through dbt model optimization, partition pruning, clustering strategies,
+          and materialization overhaul — cutting cloud compute costs significantly.
+        </div>
+        <span class="card-badge">Snowflake · dbt · SQL · Python</span>
+      </div>
+
+      <div class="exp-card">
+        <div class="card-title">Data Quality &amp; Governance Framework</div>
+        <div class="card-subtitle">Data Engineering Infrastructure</div>
+        <div class="card-date">Case Study</div>
+        <div class="card-desc">
+          Implemented an enterprise DQ framework using Great Expectations and dbt tests,
+          detecting 99.5% of anomalies before they reached production. Established
+          data lineage documentation, SLA monitoring, and automated alerting pipelines.
+        </div>
+        <span class="card-badge">Python · SQL · dbt · Great Expectations</span>
+      </div>
+
+      <div class="exp-card">
+        <div class="card-title">API-Driven ETL Automation</div>
+        <div class="card-subtitle">Integration Architecture</div>
+        <div class="card-date">Case Study</div>
+        <div class="card-desc">
+          Built a configurable ETL framework ingesting data from 20+ REST APIs using
+          Python and Airflow. Reduced new integration onboarding from weeks to hours
+          with templated pipeline patterns, error retry logic, and centralized
+          monitoring dashboards.
+        </div>
+        <span class="card-badge">REST APIs · Python · SQL · Airflow</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4 · TECHNICAL EXPERTISE                                     -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="divider"></div>
+<section id="skills">
+  <div class="content-wrap">
+    <h2 class="section-heading">Technical Expertise</h2>
+    <div class="section-bar"></div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-category">Languages &amp; Tools</div>
+        <div class="badge-list">
+          <span class="skill-badge">Python
+            <span class="tooltip">Primary language for data engineering, ML pipelines &amp; automation</span>
+          </span>
+          <span class="skill-badge">SQL
+            <span class="tooltip">Advanced queries, window functions, performance optimization</span>
+          </span>
+          <span class="skill-badge">PySpark
+            <span class="tooltip">Distributed data processing at petabyte scale</span>
+          </span>
+          <span class="skill-badge">R
+            <span class="tooltip">Statistical analysis &amp; data visualization</span>
+          </span>
+          <span class="skill-badge">Git/GitHub
+            <span class="tooltip">Version control &amp; collaborative development</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-category">Data Platforms</div>
+        <div class="badge-list">
+          <span class="skill-badge">BigQuery
+            <span class="tooltip">Serverless, highly-scalable data warehouse on GCP</span>
+          </span>
+          <span class="skill-badge">Snowflake
+            <span class="tooltip">Cloud data platform for analytics workloads</span>
+          </span>
+          <span class="skill-badge">Azure SQL
+            <span class="tooltip">Enterprise RDBMS on Microsoft Azure</span>
+          </span>
+          <span class="skill-badge">PostgreSQL
+            <span class="tooltip">Advanced open-source RDBMS for transactional &amp; analytical workloads</span>
+          </span>
+          <span class="skill-badge">Redshift
+            <span class="tooltip">Columnar data warehouse on AWS</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-category">Cloud &amp; Orchestration</div>
+        <div class="badge-list">
+          <span class="skill-badge">GCP
+            <span class="tooltip">Google Cloud — BigQuery, Dataflow, Cloud Functions, Pub/Sub</span>
+          </span>
+          <span class="skill-badge">AWS
+            <span class="tooltip">Amazon Web Services — S3, Glue, Redshift, Lambda</span>
+          </span>
+          <span class="skill-badge">Azure
+            <span class="tooltip">Microsoft Azure — ADF, Synapse, Databricks, Event Hubs</span>
+          </span>
+          <span class="skill-badge">Airflow
+            <span class="tooltip">Workflow orchestration &amp; DAG scheduling</span>
+          </span>
+          <span class="skill-badge">dbt
+            <span class="tooltip">Data transformation &amp; analytics engineering framework</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5 · CONTACT / FOOTER                                        -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<section id="contact">
+  <div style="max-width:1400px;margin:0 auto;">
+    <h2 class="contact-heading">Get In Touch</h2>
+    <p class="contact-subtitle">
+      Have a project in mind? Let's discuss how I can help with your data engineering and analytics needs.
+    </p>
+
+    <form id="inquiryForm" novalidate>
+      <div class="form-row-3">
+        <div class="form-group">
+          <label for="fname">Full Name</label>
+          <input type="text" id="fname" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="femail">Email Address</label>
+          <input type="email" id="femail" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="fphone">Phone Number</label>
+          <input type="tel" id="fphone" name="phone" placeholder="+1 (XXX) XXX-XXXX" />
+        </div>
+      </div>
+
+      <div class="form-full form-group">
+        <label for="fservice">What Do You Need Help With?</label>
+        <select id="fservice" name="service" required>
+          <option value="" disabled selected>Select a service…</option>
+          <option>Data Architecture &amp; Design</option>
+          <option>ETL Pipeline Development</option>
+          <option>Cloud Migration Strategy</option>
+          <option>Analytics Platform Implementation</option>
+          <option>Performance Optimization</option>
+          <option>General Consulting</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-full form-group">
+        <label for="fdetails">Project Details</label>
+        <textarea id="fdetails" name="details"
+          placeholder="Tell me about your project, timeline, and goals…"
+          required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
+      <div class="form-feedback" id="formFeedback"></div>
+    </form>
+
+    <div class="footer-info">
+      <div class="footer-info-item">
+        <div class="fi-label">📞 Phone</div>
+        <div class="fi-value">+1 682-371-0567</div>
+      </div>
+      <div class="footer-info-item">
+        <div class="fi-label">📧 Email</div>
+        <div class="fi-value">bsanagav@gmail.com</div>
+      </div>
+      <div class="footer-info-item">
+        <div class="fi-label">📍 Location</div>
+        <div class="fi-value">Houston, Texas, USA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- JAVASCRIPT                                                           -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<script>
+  /* ── CONFIG ──────────────────────────────────────────────────────── */
+  // Set this to your deployed Cloud Function URL after GCP deployment.
+  // Leave empty to use fallback alert behavior.
+  const INQUIRY_ENDPOINT = '';
+
+  /* ── SLIDESHOW ───────────────────────────────────────────────────── */
+  const slides    = document.querySelectorAll('.slide-bg');
+  const dotsWrap  = document.getElementById('slideDots');
+  let   current   = 0;
+  let   timer;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => { clearInterval(timer); goToSlide(i); startTimer(); });
+    dotsWrap.appendChild(d);
+  });
+
+  function goToSlide(idx) {
+    slides[current].classList.remove('active');
+    document.querySelectorAll('.dot')[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    document.querySelectorAll('.dot')[current].classList.add('active');
+  }
+
+  function startTimer() {
+    timer = setInterval(() => goToSlide(current + 1), 5000);
+  }
+
+  startTimer();
+
+  /* ── PHOTO UPLOAD ────────────────────────────────────────────────── */
+  const fileInput = document.getElementById('fileInput');
+  const uploadBtn = document.getElementById('uploadBtn');
+
+  fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const src = ev.target.result;
+      slides.forEach(img => img.src = src);
+      uploadBtn.textContent = '✓ Photo Loaded';
+    };
+    reader.readAsDataURL(file);
+  });
+
+  /* ── FORM SUBMIT ─────────────────────────────────────────────────── */
+  const form     = document.getElementById('inquiryForm');
+  const feedback = document.getElementById('formFeedback');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
+    const service = document.getElementById('fservice').value;
+    const details = document.getElementById('fdetails').value.trim();
+
+    if (!name || !email || !service || !details) {
+      showFeedback('error', 'Please fill in all required fields.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'SENDING…';
+
+    if (INQUIRY_ENDPOINT) {
+      // Send to Cloud Function
+      try {
+        const res = await fetch(INQUIRY_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, service, details })
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          showFeedback('success',
+            `Thank you, ${name}! Your inquiry has been received. I'll contact you at ${email} to discuss your ${service} needs. — Badrinath`);
+          form.reset();
+        } else {
+          showFeedback('error', data.message || 'Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        showFeedback('error', 'Unable to send inquiry right now. Please email me directly at bsanagav@gmail.com');
+      }
+    } else {
+      // Fallback: alert (used before Cloud Function is deployed)
+      alert(`Thank you, ${name}! Your inquiry has been received. We'll contact you at ${email} to discuss your ${service} needs. Best regards, Badrinath`);
+      form.reset();
+      showFeedback('success', `Thank you, ${name}! Your message was received.`);
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'SEND INQUIRY';
+  });
+
+  function showFeedback(type, msg) {
+    feedback.className = 'form-feedback ' + type;
+    feedback.textContent = msg;
+    feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>
