@@ -85,23 +85,31 @@
         rgba(10,10,10,0.70) 100%);
     }
 
-    /* Photo upload btn */
-    .photo-upload-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      background: rgba(0,212,255,0.15);
-      border: 1px solid var(--accent);
+    /* Certificate link inside edu card */
+    .cert-link {
+      font-size: 11px;
       color: var(--accent);
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: background 0.2s ease;
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
     }
-    .photo-upload-btn:hover { background: rgba(0,212,255,0.30); }
-    #fileInput { display: none; }
+    .cert-link:hover { opacity: 1; text-decoration: underline; }
+
+    /* GitHub link on project cards */
+    .card-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--accent);
+      opacity: 0.75;
+      transition: opacity 0.2s ease;
+    }
+    .card-github:hover { opacity: 1; text-decoration: underline; }
 
     /* Hero content grid */
     .hero-content {
@@ -530,30 +538,15 @@
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 <section id="hero">
 
-  <!-- Slideshow backgrounds -->
+  <!-- Slideshow backgrounds — place your photos in the pictures/ folder -->
   <img class="slide-bg active" id="slide-0"
-    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80"
+    src="pictures/photo1.jpg"
     alt="" aria-hidden="true" />
   <img class="slide-bg" id="slide-1"
-    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80"
-    alt="" aria-hidden="true" />
-  <img class="slide-bg" id="slide-2"
-    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&q=80"
-    alt="" aria-hidden="true" />
-  <img class="slide-bg" id="slide-3"
-    src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80"
-    alt="" aria-hidden="true" />
-  <img class="slide-bg" id="slide-4"
-    src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1600&q=80"
+    src="pictures/photo2.jpg"
     alt="" aria-hidden="true" />
 
   <div class="hero-overlay"></div>
-
-  <!-- Photo upload -->
-  <button class="photo-upload-btn" id="uploadBtn" onclick="document.getElementById('fileInput').click()">
-    📷 Load My Photo
-  </button>
-  <input type="file" id="fileInput" accept="image/*" />
 
   <!-- Hero content -->
   <div class="hero-content">
@@ -575,6 +568,9 @@
             <span class="degree-type">Master's Degree</span>
             <span class="field">Data Analytics Engineering</span>
             <span class="university">George Mason University</span>
+            <a class="cert-link" href="certificates/masters.pdf" target="_blank" rel="noopener">
+              ↗ View Certificate
+            </a>
           </div>
         </div>
         <div class="edu-card">
@@ -583,6 +579,9 @@
             <span class="degree-type">Bachelor's Degree</span>
             <span class="field">Computer Science &amp; Engineering</span>
             <span class="university">Jawaharlal Nehru Technological University Hyderabad</span>
+            <a class="cert-link" href="certificates/bachelors.pdf" target="_blank" rel="noopener">
+              ↗ View Certificate
+            </a>
           </div>
         </div>
       </div>
@@ -713,6 +712,9 @@
           capabilities.
         </div>
         <span class="card-badge">AWS · Azure · GCP · Terraform</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+          ↗ View on GitHub
+        </a>
       </div>
 
       <div class="exp-card">
@@ -725,6 +727,9 @@
           clinical decision support and regulatory reporting for hospital networks.
         </div>
         <span class="card-badge">Kafka · Spark · Azure · Power BI</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+          ↗ View on GitHub
+        </a>
       </div>
 
       <div class="exp-card">
@@ -738,6 +743,9 @@
           conversion lift.
         </div>
         <span class="card-badge">Python · BigQuery · ML · Statistics</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+          ↗ View on GitHub
+        </a>
       </div>
 
       <div class="exp-card">
@@ -750,6 +758,9 @@
           and materialization overhaul — cutting cloud compute costs significantly.
         </div>
         <span class="card-badge">Snowflake · dbt · SQL · Python</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+          ↗ View on GitHub
+        </a>
       </div>
 
       <div class="exp-card">
@@ -762,6 +773,9 @@
           data lineage documentation, SLA monitoring, and automated alerting pipelines.
         </div>
         <span class="card-badge">Python · SQL · dbt · Great Expectations</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+          ↗ View on GitHub
+        </a>
       </div>
 
       <div class="exp-card">
@@ -775,6 +789,9 @@
           monitoring dashboards.
         </div>
         <span class="card-badge">REST APIs · Python · SQL · Airflow</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+          ↗ View on GitHub
+        </a>
       </div>
 
     </div>
@@ -963,22 +980,6 @@
   }
 
   startTimer();
-
-  /* ── PHOTO UPLOAD ────────────────────────────────────────────────── */
-  const fileInput = document.getElementById('fileInput');
-  const uploadBtn = document.getElementById('uploadBtn');
-
-  fileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      const src = ev.target.result;
-      slides.forEach(img => img.src = src);
-      uploadBtn.textContent = '✓ Photo Loaded';
-    };
-    reader.readAsDataURL(file);
-  });
 
   /* ── FORM SUBMIT ─────────────────────────────────────────────────── */
   const form     = document.getElementById('inquiryForm');
