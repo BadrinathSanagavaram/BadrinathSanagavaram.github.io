@@ -98,6 +98,18 @@
     }
     .cert-link:hover { opacity: 1; text-decoration: underline; }
 
+    /* Rank badge on project cards */
+    .rank-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
+
     /* GitHub link on project cards */
     .card-github {
       display: inline-flex;
@@ -538,12 +550,12 @@
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 <section id="hero">
 
-  <!-- Slideshow backgrounds — place your photos in the pictures/ folder -->
+  <!-- Slideshow backgrounds -->
   <img class="slide-bg active" id="slide-0"
-    src="pictures/photo1.jpg"
+    src="pictures/183252572.jpeg"
     alt="" aria-hidden="true" />
   <img class="slide-bg" id="slide-1"
-    src="pictures/photo2.jpg"
+    src="pictures/Gemini_Generated_Image_flebzqflebzqfleb.png"
     alt="" aria-hidden="true" />
 
   <div class="hero-overlay"></div>
@@ -568,7 +580,7 @@
             <span class="degree-type">Master's Degree</span>
             <span class="field">Data Analytics Engineering</span>
             <span class="university">George Mason University</span>
-            <a class="cert-link" href="certificates/masters.pdf" target="_blank" rel="noopener">
+            <a class="cert-link" href="certificates/CMM_merged.pdf" target="_blank" rel="noopener">
               ↗ View Certificate
             </a>
           </div>
@@ -579,7 +591,7 @@
             <span class="degree-type">Bachelor's Degree</span>
             <span class="field">Computer Science &amp; Engineering</span>
             <span class="university">Jawaharlal Nehru Technological University Hyderabad</span>
-            <a class="cert-link" href="certificates/bachelors.pdf" target="_blank" rel="noopener">
+            <a class="cert-link" href="certificates/Diploma%20Certificate.pdf" target="_blank" rel="noopener">
               ↗ View Certificate
             </a>
           </div>
@@ -702,94 +714,103 @@
     <div class="card-grid-3">
 
       <div class="exp-card">
-        <div class="card-title">Multi-Cloud Data Migration</div>
-        <div class="card-subtitle">Enterprise Architecture</div>
-        <div class="card-date">Case Study</div>
+        <div class="rank-badge">🥇 Rank #1</div>
+        <div class="card-title">Job Finder</div>
+        <div class="card-subtitle">Intelligent Job Discovery &amp; Resume Matching</div>
         <div class="card-desc">
-          Architected zero-downtime data migration across AWS, Azure, and GCP for an
-          enterprise client using Terraform IaC. Designed cross-cloud replication
-          with 99.9% data integrity, full audit trail, and automated rollback
-          capabilities.
+          Fully-automated, production-grade job discovery system running 3× daily via
+          GitHub Actions. Scrapes LinkedIn jobs, scores them against your resume using
+          TF-IDF machine learning, and delivers ranked opportunities to email, Google
+          Sheets, and a Streamlit dashboard. Intelligent filtering for agencies, visa
+          sponsorship, and security clearances.
         </div>
-        <span class="card-badge">AWS · Azure · GCP · Terraform</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+        <span class="card-badge">Python · BigQuery · scikit-learn · GitHub Actions</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram/job-finder" target="_blank" rel="noopener">
           ↗ View on GitHub
         </a>
       </div>
 
       <div class="exp-card">
-        <div class="card-title">Real-Time Healthcare Analytics Platform</div>
-        <div class="card-subtitle">Full-Stack Implementation</div>
-        <div class="card-date">Case Study</div>
+        <div class="rank-badge">🥈 Rank #2</div>
+        <div class="card-title">Claude Monitor</div>
+        <div class="card-subtitle">Real-Time AI Session Monitoring &amp; Token Tracker</div>
         <div class="card-desc">
-          Built a HIPAA-compliant streaming analytics platform processing 50K+ events
-          per second using Kafka and Spark. Live Power BI dashboards enabled real-time
-          clinical decision support and regulatory reporting for hospital networks.
+          Silently captures every Claude Code interaction, writes permanent Markdown
+          transcripts, estimates token consumption, and stores metrics in BigQuery.
+          Triggers email alerts at configurable thresholds (20K / 60K / 200K tokens).
+          Live Streamlit dashboard shows context window utilization, breach history,
+          and weekly trends. Sub-5ms latency design.
         </div>
-        <span class="card-badge">Kafka · Spark · Azure · Power BI</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+        <span class="card-badge">Rust · Python · BigQuery · Streamlit</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram/claude-monitor" target="_blank" rel="noopener">
           ↗ View on GitHub
         </a>
       </div>
 
       <div class="exp-card">
-        <div class="card-title">Campaign Propensity Model</div>
-        <div class="card-subtitle">Data Science &amp; ML Pipeline</div>
-        <div class="card-date">Case Study</div>
+        <div class="rank-badge">🥉 Rank #3</div>
+        <div class="card-title">Indian Election Data Pipeline (1980–2024)</div>
+        <div class="card-subtitle">45-Year Political Data Engineering</div>
         <div class="card-desc">
-          Developed voter propensity scoring models using BigQuery ML achieving 78%
-          prediction accuracy. Automated the full ML lifecycle from feature engineering
-          to production deployment, enabling targeted canvassing with measurable
-          conversion lift.
+          Comprehensive pipeline processing 45 years of Indian election data across
+          inconsistent ECI formats. Features 12+ Jupyter notebooks for web scraping,
+          party name harmonization, constituency remapping, deduplication via SQL window
+          functions, and Constituency Volatility Index (CVI) computation. Loads into
+          MySQL for Tableau and Power BI consumption.
         </div>
-        <span class="card-badge">Python · BigQuery · ML · Statistics</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+        <span class="card-badge">Python · SQL · MySQL · Tableau</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram/Complete-Election-Data-Engineering-Project" target="_blank" rel="noopener">
           ↗ View on GitHub
         </a>
       </div>
 
       <div class="exp-card">
-        <div class="card-title">Data Warehouse Optimization</div>
-        <div class="card-subtitle">Performance Engineering</div>
-        <div class="card-date">Case Study</div>
+        <div class="rank-badge">4️⃣ Rank #4</div>
+        <div class="card-title">Geo-Risk Analysis System (RiskTitans)</div>
+        <div class="card-subtitle">Natural &amp; Cybersecurity Risk Visualization</div>
         <div class="card-desc">
-          Redesigned a Snowflake data warehouse reducing average query execution time
-          by 65% through dbt model optimization, partition pruning, clustering strategies,
-          and materialization overhaul — cutting cloud compute costs significantly.
+          6-member team platform synthesizing disaster and cybersecurity risk data from
+          government databases. Performs geospatial analysis with interactive US risk
+          mapping, integrating FEMA disaster declarations, NAICS classification, Veris
+          cybersecurity incidents, and CVE vulnerability databases for comprehensive
+          business risk assessment.
         </div>
-        <span class="card-badge">Snowflake · dbt · SQL · Python</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+        <span class="card-badge">Python · Folium · FEMA APIs · JavaScript</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram/Geo-Risk-Analysis-Prediction-System-RiskTitans-" target="_blank" rel="noopener">
           ↗ View on GitHub
         </a>
       </div>
 
       <div class="exp-card">
-        <div class="card-title">Data Quality &amp; Governance Framework</div>
-        <div class="card-subtitle">Data Engineering Infrastructure</div>
-        <div class="card-date">Case Study</div>
+        <div class="rank-badge">5️⃣ Rank #5</div>
+        <div class="card-title">Global Layoffs ETL Pipeline</div>
+        <div class="card-subtitle">Data Cleaning, Aggregation &amp; Visualization</div>
         <div class="card-desc">
-          Implemented an enterprise DQ framework using Great Expectations and dbt tests,
-          detecting 99.5% of anomalies before they reached production. Established
-          data lineage documentation, SLA monitoring, and automated alerting pipelines.
+          End-to-end ETL pipeline ingesting global layoff data from CSV, performing
+          systematic deduplication using ROW_NUMBER(), whitespace trimming, type
+          conversions, and null handling via intelligent joins. Transforms into
+          aggregated views by company, country, industry, and time period. Visualized
+          in Tableau with world map heat mapping across 30 iterative commits.
         </div>
-        <span class="card-badge">Python · SQL · dbt · Great Expectations</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+        <span class="card-badge">Python · SQL · MySQL · Tableau</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram/First-ETL-Pipeline-Layoffs-Project" target="_blank" rel="noopener">
           ↗ View on GitHub
         </a>
       </div>
 
       <div class="exp-card">
-        <div class="card-title">API-Driven ETL Automation</div>
-        <div class="card-subtitle">Integration Architecture</div>
-        <div class="card-date">Case Study</div>
+        <div class="rank-badge">6️⃣ Rank #6</div>
+        <div class="card-title">Mental Health Treatment Gap Analysis</div>
+        <div class="card-subtitle">Healthcare Data Analysis &amp; Pipeline</div>
         <div class="card-desc">
-          Built a configurable ETL framework ingesting data from 20+ REST APIs using
-          Python and Airflow. Reduced new integration onboarding from weeks to hours
-          with templated pipeline patterns, error retry logic, and centralized
-          monitoring dashboards.
+          Data analysis project examining mental health treatment accessibility gaps
+          using containerized infrastructure. Features automated migration pipelines
+          consolidating multi-source healthcare datasets, Docker Compose for
+          reproducibility, and Jupyter notebooks analyzing treatment accessibility
+          disparities — with potential to expand into a full health analytics platform.
         </div>
-        <span class="card-badge">REST APIs · Python · SQL · Airflow</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram" target="_blank" rel="noopener">
+        <span class="card-badge">Python · Docker · Jupyter · pandas</span>
+        <a class="card-github" href="https://github.com/BadrinathSanagavaram/Mental-Health-Treatment-Gap-Analysis" target="_blank" rel="noopener">
           ↗ View on GitHub
         </a>
       </div>
