@@ -285,6 +285,7 @@
     .card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
     .exp-card {
+      display: block;
       position: relative;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -293,6 +294,8 @@
       cursor: pointer;
       transition: all 0.3s ease;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
     }
     .exp-card::before {
       content: '';
@@ -580,7 +583,7 @@
             <span class="degree-type">Master's Degree</span>
             <span class="field">Data Analytics Engineering</span>
             <span class="university">George Mason University</span>
-            <a class="cert-link" href="certificates/CMM_merged.pdf" target="_blank" rel="noopener">
+            <a class="cert-link" href="certificates/Diploma%20Certificate.pdf" target="_blank" rel="noopener">
               ↗ View Certificate
             </a>
           </div>
@@ -591,7 +594,7 @@
             <span class="degree-type">Bachelor's Degree</span>
             <span class="field">Computer Science &amp; Engineering</span>
             <span class="university">Jawaharlal Nehru Technological University Hyderabad</span>
-            <a class="cert-link" href="certificates/Diploma%20Certificate.pdf" target="_blank" rel="noopener">
+            <a class="cert-link" href="certificates/CMM_merged.pdf" target="_blank" rel="noopener">
               ↗ View Certificate
             </a>
           </div>
@@ -713,8 +716,7 @@
 
     <div class="card-grid-3">
 
-      <div class="exp-card">
-        <div class="rank-badge">🥇 Rank #1</div>
+      <a class="exp-card" href="https://github.com/BadrinathSanagavaram/job-finder" target="_blank" rel="noopener">
         <div class="card-title">Job Finder</div>
         <div class="card-subtitle">Intelligent Job Discovery &amp; Resume Matching</div>
         <div class="card-desc">
@@ -725,13 +727,9 @@
           sponsorship, and security clearances.
         </div>
         <span class="card-badge">Python · BigQuery · scikit-learn · GitHub Actions</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram/job-finder" target="_blank" rel="noopener">
-          ↗ View on GitHub
-        </a>
-      </div>
+      </a>
 
-      <div class="exp-card">
-        <div class="rank-badge">🥈 Rank #2</div>
+      <a class="exp-card" href="https://github.com/BadrinathSanagavaram/claude-monitor" target="_blank" rel="noopener">
         <div class="card-title">Claude Monitor</div>
         <div class="card-subtitle">Real-Time AI Session Monitoring &amp; Token Tracker</div>
         <div class="card-desc">
@@ -742,13 +740,9 @@
           and weekly trends. Sub-5ms latency design.
         </div>
         <span class="card-badge">Rust · Python · BigQuery · Streamlit</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram/claude-monitor" target="_blank" rel="noopener">
-          ↗ View on GitHub
-        </a>
-      </div>
+      </a>
 
-      <div class="exp-card">
-        <div class="rank-badge">🥉 Rank #3</div>
+      <a class="exp-card" href="https://github.com/BadrinathSanagavaram/Complete-Election-Data-Engineering-Project" target="_blank" rel="noopener">
         <div class="card-title">Indian Election Data Pipeline (1980–2024)</div>
         <div class="card-subtitle">45-Year Political Data Engineering</div>
         <div class="card-desc">
@@ -759,13 +753,9 @@
           MySQL for Tableau and Power BI consumption.
         </div>
         <span class="card-badge">Python · SQL · MySQL · Tableau</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram/Complete-Election-Data-Engineering-Project" target="_blank" rel="noopener">
-          ↗ View on GitHub
-        </a>
-      </div>
+      </a>
 
-      <div class="exp-card">
-        <div class="rank-badge">4️⃣ Rank #4</div>
+      <a class="exp-card" href="https://github.com/BadrinathSanagavaram/Geo-Risk-Analysis-Prediction-System-RiskTitans-" target="_blank" rel="noopener">
         <div class="card-title">Geo-Risk Analysis System (RiskTitans)</div>
         <div class="card-subtitle">Natural &amp; Cybersecurity Risk Visualization</div>
         <div class="card-desc">
@@ -776,13 +766,9 @@
           business risk assessment.
         </div>
         <span class="card-badge">Python · Folium · FEMA APIs · JavaScript</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram/Geo-Risk-Analysis-Prediction-System-RiskTitans-" target="_blank" rel="noopener">
-          ↗ View on GitHub
-        </a>
-      </div>
+      </a>
 
-      <div class="exp-card">
-        <div class="rank-badge">5️⃣ Rank #5</div>
+      <a class="exp-card" href="https://github.com/BadrinathSanagavaram/First-ETL-Pipeline-Layoffs-Project" target="_blank" rel="noopener">
         <div class="card-title">Global Layoffs ETL Pipeline</div>
         <div class="card-subtitle">Data Cleaning, Aggregation &amp; Visualization</div>
         <div class="card-desc">
@@ -793,13 +779,9 @@
           in Tableau with world map heat mapping across 30 iterative commits.
         </div>
         <span class="card-badge">Python · SQL · MySQL · Tableau</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram/First-ETL-Pipeline-Layoffs-Project" target="_blank" rel="noopener">
-          ↗ View on GitHub
-        </a>
-      </div>
+      </a>
 
-      <div class="exp-card">
-        <div class="rank-badge">6️⃣ Rank #6</div>
+      <a class="exp-card" href="https://github.com/BadrinathSanagavaram/Mental-Health-Treatment-Gap-Analysis" target="_blank" rel="noopener">
         <div class="card-title">Mental Health Treatment Gap Analysis</div>
         <div class="card-subtitle">Healthcare Data Analysis &amp; Pipeline</div>
         <div class="card-desc">
@@ -810,10 +792,7 @@
           disparities — with potential to expand into a full health analytics platform.
         </div>
         <span class="card-badge">Python · Docker · Jupyter · pandas</span>
-        <a class="card-github" href="https://github.com/BadrinathSanagavaram/Mental-Health-Treatment-Gap-Analysis" target="_blank" rel="noopener">
-          ↗ View on GitHub
-        </a>
-      </div>
+      </a>
 
     </div>
   </div>
